@@ -79,7 +79,7 @@ resource "aws_security_group" "lifebit_SG" {
 
 
 resource "aws_instance" "lifebit" {
-  ami           	= "ami-0de842d2477e3b337"
+  ami           	= "ami-0323d48d3a525fd18"
   instance_type 	= "t2.micro"
 #  key_name 		= aws_key_pair.lifebit.key_name
   security_groups	= ["${aws_security_group.lifebit_SG.id}"]
