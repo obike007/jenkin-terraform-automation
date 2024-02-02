@@ -12,7 +12,7 @@ resource "aws_vpc" "lifebit_vpc" {
 resource "aws_subnet" "lifebit_subnet" {
   vpc_id            	= aws_vpc.lifebit_vpc.id
   cidr_block        	= "${cidrsubnet(aws_vpc.lifebit_vpc.cidr_block, 3, 1)}"
-  availability_zone 	= "eu-west-2a"
+  availability_zone 	= "eu-west-1a"
 
   tags = {
     Name 		= "lifebit-subnets"
@@ -119,10 +119,10 @@ resource "aws_instance" "lifebit" {
 # }
 
 
-resource "aws_eip" "lifebit_eip" {
-  instance		= "${aws_instance.lifebit.id}"
-  vpc 			= true
-}
+//resource "aws_eip" "lifebit_eip" {
+  //instance		= "${aws_instance.lifebit.id}"
+  //vpc 			= true
+//}
 
 
 resource "aws_internet_gateway" "lifebit_gw" {
